@@ -35,3 +35,5 @@ Sử dụng httpClient để gửi request-> Import module httpClientModule
      - Tạo router để hiển thị form sửa sản phẩm. -> app.routes.ts
     - Bắt sự kiện khi load form thì hiển thị thông tin sản phẩm cần sửa vào form.
         + Lấy thông tin id sản phẩm từ URL -> gọi API Lấy thông tin sản phẩm từ id sản phẩm
+
+Link video buổi Tuto: https://drive.google.com/drive/folders/19mWjyYKkTvQoTFFAu_J_zc89VsresNcp
