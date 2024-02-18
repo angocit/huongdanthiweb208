@@ -1,0 +1,16 @@
+<form [formGroup]="formProduct" (ngSubmit)="onSubmit()">
+    <label>Tên sản phẩm</label>
+    <input type="text" formControlName="name"/>
+    <label>Ảnh sản phẩm</label>
+    <input type="text" formControlName="image"/>
+    <label>Danh mục</label>
+    <select formControlName="cat_id">
+        <option value="1">Áo</option>
+        <option value="2">Quần</option>
+        <option value="3">Giày dép</option>
+    </select>
+    <label>Giá sản phẩm</label>
+    <input type="text" formControlName="price"/> <br>
+    <button type="submit">Cập nhật sản phẩm</button>
+</form>
+<pre>{{mess}}</pre>

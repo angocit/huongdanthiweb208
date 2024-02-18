@@ -1,0 +1,21 @@
+<div class="container">
+<form [formGroup]="formProduct" (ngSubmit)="onSubmit()">
+    <label>Tên sản phẩm</label>
+    <input type="text" formControlName="name" class="form-control"/>
+    <div *ngIf="!formProduct.controls.name.valid&&(formProduct.controls.name.dirty||formProduct.controls.name.touched)">
+        tên sản phẩm không được để trống
+    </div>
+    <label>Ảnh sản phẩm</label>
+    <input type="text" formControlName="image" class="form-control"/>
+    <label>Danh mục</label>
+    <select formControlName="cat_id" class="form-control">
+        <option value="1">Áo</option>
+        <option value="2">Quần</option>
+        <option value="3">Giày dép</option>
+    </select>
+    <label>Giá sản phẩm</label>
+    <input type="text" formControlName="price" class="form-control"/> <br>
+    <button type="submit" class="btn btn-primary" [disabled]="!formProduct.valid">Thêm mới sản phẩm</button>
+</form>
+<pre>{{mess}}</pre>
+</div>

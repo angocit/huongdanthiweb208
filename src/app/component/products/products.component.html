@@ -1,0 +1,36 @@
+<div class="container">
+<h1>
+    Danh sách sản phẩm 
+</h1>
+<pre>{{mess}}</pre>
+
+<select [formControl]="select" (change)="Filter()" class="form-control">
+    <option value="1">Áo</option>
+    <option value="2">Quần</option>
+    <option value="3">Giày</option>
+</select>
+<table class="table">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Ảnh</th>
+            <th>Tên sản phẩm</th>
+            <th>Danh mục</th>
+            <th>Giá tiền</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(product of products; track products; let i = $index){
+            <tr>
+                <td>{{i+1}}</td>
+                <td><img src="{{product.image}}" width="60"/></td>
+                <td>{{product.name}}</td>
+                <td>{{product.cat_id}}</td>
+                <td>{{product.price}}</td>
+                <td><a href="edit-product/{{product.id}}" class="btn btn-primary">Sửa</a> <button (click)="onDelete(product.id)" class="btn btn-danger">Xóa</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

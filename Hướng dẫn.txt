@@ -1,0 +1,37 @@
+- Cài đặt Json-server.
+cd vào thư mục server.
+cài đặt: npm install json-server
+- Tạo file db.json trong thư mục cài đặt json-server
+cấu trúc: 
+{
+    "products":[]
+}
+
+Chạy json-server: npx json-server db.json
+-----------------------------------------------
+Xóa hết nội dung trong file app.component.ts chỉ để lại nội dung là <router-outlet></router-outlet>
+1. Xây dựng chức năng thêm sản phẩm.
+ - Tạo commponent add-product: ng g c component/addproduct
+   + Có form -> sử dụng FormGroup + FormControl Import module ReactiveFormsModule (Nhấn ctrl+. để import module)
+      Khai báo các formControl
+
+   - Tạo router để hiển thị form thêm sản phẩm. -> app.routes.ts => Chạy
+-Bắt sự kiện submit: (ngSubmit)
+Sử dụng httpClient để gửi request-> Import module httpClientModule
+2. Xây dựng chức năng hiển thị danh sách sản phẩm
+ - Tạo component hiển thị sản phẩm: ng g c component/products
+ - Tạo router để hiển thị danh sách sản phẩm. -> app.routes.ts
+ Để hiển thị danh sách sản phẩm -> call api để lấy danh sách sản phẩm
+    Sử dụng httpClient để gửi request-> Import module httpClientModule
+ Trong file template có thể sử dụng @for hoặc ngFor để hiển thị danh sách sản phẩm.
+
+ 3. Xây dựng chức năng xóa.
+    - Bắt sự kiện khi click vào nút xóa trên component danh sách sản phẩm
+    Ở hàm xóa sản phẩm. Gửi request phương thức delete tới api của json-server
+
+ 4. Xây dựng chức năng sửa sản phẩm.
+     - Tạo component sửa sản phẩm: ng g c component/edit-products
+     Lấy toàn bộ nội dung từ component add product sang.
+     - Tạo router để hiển thị form sửa sản phẩm. -> app.routes.ts
+    - Bắt sự kiện khi load form thì hiển thị thông tin sản phẩm cần sửa vào form.
+        + Lấy thông tin id sản phẩm từ URL -> gọi API Lấy thông tin sản phẩm từ id sản phẩm
